@@ -1,11 +1,12 @@
-import Homepage from './homepage/homepage.jsx';
-import'./App.css';
+import PerfilPage from './perfilpages/perfilpage.tsx'; 
+import './App.css';
 
 function App(){
   return(
     <>
-      <Homepage />
+      <PerfilPage /> 
     </>
   );
 }
+
 export default App;
