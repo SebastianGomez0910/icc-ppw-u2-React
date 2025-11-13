@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-const homepage=()=>{
+const Homepage=()=>{
 
     const [counter, setCounter]=useState(0);
 
@@ -35,4 +35,4 @@ const homepage=()=>{
         </div>
     );
 }
-export default homepage;
+export default Homepage;

@@ -1,13 +1,11 @@
 import { useState } from "react";
 
-// 1. Definición de la interfaz (esto requiere .tsx)
 interface PerfilPage {
   name: string;
   lastName: string;
   age: number;
 }
 
-// 2. Datos iniciales para reutilizar en el reset
 const INITIAL_DATA: PerfilPage = {
   name: "Jean Pierre",
   lastName: "Valarezo",
@@ -15,13 +13,10 @@ const INITIAL_DATA: PerfilPage = {
 };
 
 export default function PerfilPage() {
-  // 3. Uso de useState con tipado (esto también requiere .tsx)
   const [perfil, setPerfil] = useState<PerfilPage>(INITIAL_DATA);
 
-  // Desestructuración para facilitar el acceso en el JSX
   const { name, lastName, age } = perfil;
 
-  // Función que usa los datos
   const getFullName = (): string =>
     `${name} ${lastName} con edad ${age} años`;
 
