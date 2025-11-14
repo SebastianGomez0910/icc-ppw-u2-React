@@ -5,18 +5,22 @@ const STORAGE_KEY = 'proyectosApp';
 export function useLocalStorage(initialValue) {
     const [value, setValue] = useState(() => {
         try {
-            const storedData = localStorage.getItem(STORAGE_KEY);
-            return storedData ? JSON.parse(storedData) : initialValue;
-        } catch (error) {
-            console.error("Error al cargar localStorage:", error);
+            const stored = localStorage.getItem(STORAGE_KEY);
+            const parsed = stored ? JSON.parse(stored) : initialValue;
+
+            // Siempre aseguramos que sea un array de proyectos
+            return Array.isArray(parsed) ? parsed : initialValue;
+        } catch {
             return initialValue;
         }
     });
 
     useEffect(() => {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
-        console.log("Datos guardados en localStorage:", value);
-    }, [value]); 
+        // Solo guardamos si "value" es realmente un array
+        if (Array.isArray(value)) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
+        }
+    }, [value]);
 
-    return [value, setValue]; 
+    return [value, setValue];
 }
