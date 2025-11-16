@@ -7,6 +7,8 @@ import React from 'react';
 import { ProyectosProvider } from './context/proyectoContext.jsx';
 import ProyectoPage from './ProyectoPage/proyecto-page.jsx';
 import ProyectoDosPage from './ProyectoDosPage/proyecto-dos-page.jsx';
+import Formulario from './FormularioPage/formulariopage.jsx';
+
 
 function App(){
   return(
@@ -19,6 +21,7 @@ function App(){
           <Route path="/Perfil" element={<PerfilPage/>}></Route>
           <Route path="/proyecto" element={<ProyectoPage />} />
           <Route path="/proyectoDos" element={<ProyectoDosPage />} />
+          <Route path="/formulario" element={<Formulario />} />
         </Routes>
       </BrowserRouter>
     </ProyectosProvider>  

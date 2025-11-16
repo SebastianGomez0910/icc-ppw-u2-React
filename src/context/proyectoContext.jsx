@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { ProyectosContext } from './ProyetoContextBase';
 
@@ -14,9 +14,9 @@ export function ProyectosProvider({ children }) {
         setProyectos(prevProyectos => [...prevProyectos, newProyecto]);
     };
     
-    const EliminarPrimerProyecto = () => {
+    const EliminarPrimerProyecto = useCallback(() => {
         setProyectos(prevProyectos => prevProyectos.slice(1));
-    };
+    },[setProyectos]);
 
     const contextValue = {
         proyectos, 

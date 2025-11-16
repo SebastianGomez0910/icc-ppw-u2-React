@@ -3,7 +3,7 @@ import { useProyectos } from "../hooks/useProyectos";
 import { ProyectoList } from "../ListaProyecto/lista-proyecto";
 
 export default function ProyectoPage() {
-    const { proyectos, AddProyecto, EliminarPrimerProyecto } = useProyectos();
+    const { proyectos, AddProyecto } = useProyectos();
 
     const [name, setName] = useState("");
     const [descripcion, setDescripcion] = useState("");
@@ -28,7 +28,7 @@ export default function ProyectoPage() {
                 <h3>Agregar proyecto</h3>
                 <h4>proyecto a agregar: {name}</h4>
 
-                <input 
+                <input  
                     type="text"
                     placeholder="Nombre del proyecto"
                     value={name}
@@ -42,8 +42,8 @@ export default function ProyectoPage() {
                     onChange={(e) => setDescripcion(e.target.value)}
                 />
 
+                
                 <button onClick={handleAdd}>Agregar</button>
-                <button onClick={EliminarPrimerProyecto}>Eliminar el primero</button>
             </div>
 
             <ProyectoList proyectos={proyectos} />

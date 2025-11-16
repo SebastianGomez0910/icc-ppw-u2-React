@@ -33,6 +33,13 @@
                 >
                     Perfil Dos
                 </NavLink>
+
+                <NavLink 
+                to="/Formulario"
+                style={({isActive})=>({color:isActive ? 'yellow':'white',fontWeight:'bold',marginLeft:'1rem'})}
+                >
+                    Formulario
+                </NavLink>
             </nav>
         );
     }
